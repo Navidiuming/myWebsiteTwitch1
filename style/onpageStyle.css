@@ -1,0 +1,172 @@
+/* general ###################################### */
+*{
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: rgb(230, 230, 230);
+    background: linear-gradient(rgb(203, 203, 203), rgb(210,210,210));
+    color: #000;
+    line-height: 1.5;
+    font-size: 15px;
+
+}
+li{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    }
+/* heder section ################################ */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 20px 0px;
+    font-size: 1rem;
+}
+.header ul{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-right: 20px;
+}
+.header ul li{
+    padding: 0 10px;
+}
+.header ul li a{
+    padding-bottom: 10px;
+
+}
+.header ul li a:hover{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.header .mainLogo{
+    width: 30vw;
+    max-width: 200px;
+    border-radius: 200px;
+}
+
+/* podcast banner section */
+.podcastBanner{
+    background: url("/images/podcastBanner.jpg") no-repeat top center/cover;
+    width: 100%;
+    height: 25vmax;
+    min-height: 200px;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: center;
+    gap: 5vh;
+    margin: 20px 0;
+    font-weight: bolder;
+}
+.podcastBanner p{
+    color: white;
+    width: 50%;
+    align-content: center;
+    padding-right: 25px;
+
+}
+.podcastBanner a{
+    margin-right: 50px;
+}
+.btn{
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: #fff;
+    font-size: 15px;
+}
+
+.btn:hover{
+    color: blue;
+}
+/* learning section */
+.learningSection{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    justify-content: center;
+    align-content: stretch;
+    gap: 20px;
+}
+.learningItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.learningItems img{
+    width: 100%;
+}
+
+.learningItems a{
+    font-weight: bold;
+    background: #262626;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 0px;
+    width: 25%;
+}
+.learningItems a:hover{
+    color: blue;
+}
+
+@media only screen and (max-width:950px) {
+    .learningSection{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2,1fr);
+        justify-items: center;
+        justify-content: center;
+        align-content: stretch;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .learningSection{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(1,1fr);
+        justify-items: center;
+        justify-content: center;
+        align-content: stretch;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        height: 80px;
+        padding: 30px 0px;
+        font-size: 1rem;
+    }
+
+    .header ul{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 20px;
+    }
+}
