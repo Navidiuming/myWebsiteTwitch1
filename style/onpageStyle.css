@@ -63,7 +63,7 @@ a{
 
 /* podcast banner section */
 .podcastBanner{
-    background: url("/images/podcastBanner.jpg") no-repeat top center/cover;
+    background: url("../images/podcastBanner.jpg") no-repeat top center/cover;
     width: 100%;
     height: 25vmax;
     min-height: 200px;
