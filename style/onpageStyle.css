@@ -8,7 +8,6 @@
 body{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background: rgb(230, 230, 230);
-    background: linear-gradient(rgb(203, 203, 203), rgb(210,210,210));
     color: #000;
     line-height: 1.5;
     font-size: 15px;
@@ -31,6 +30,7 @@ a{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-bottom: 30px;
     }
 /* heder section ################################ */
 .header{
@@ -45,17 +45,17 @@ a{
 .header ul{
     display: flex;
     flex-direction: row;
-    flex: 1;
     margin-right: 20px;
 }
 .header ul li{
-    padding: 0 10px;
+    padding: 0 10px 0 3vw;
+
 }
-.header ul li a{
+.header a{
     padding-bottom: 10px;
 
 }
-.header ul li a:hover{
+.header a:hover{
     border-bottom: 2px solid rgb(0, 0, 0);
 }
 .header .mainLogo{
@@ -64,6 +64,18 @@ a{
     border-radius: 200px;
 }
 
+.header .profileMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.header .profileMenu img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
 /* podcast banner section */
 .podcastBanner{
     background: url("../images/podcastBanner.jpg") no-repeat top center/cover;
@@ -90,7 +102,6 @@ a{
     margin-right: 50px;
 }
 .btn{
-    display: inline-block;
     border: 0;
     font-weight: bold;
     padding: 10px 20px;
@@ -144,13 +155,23 @@ a{
     height: 300px;
     padding: 50px;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+.liveTradeSection .liveTradeItems{
+    height: 90%;
+    width: 40%;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: end;
+    transition: 0.4s;
 }
-
-.liveTradeSection p , h3 , a{
-    width: 40%;
+.liveTradeSection .liveTradeItems:hover{
+    transform: scale(1.1);
+}
+.liveTradeSection .liveTradeItems a{
+    align-self: flex-end;
 }
 .liveTradeSection a{
     direction: ltr;
@@ -233,6 +254,159 @@ a{
 .newsSection .card:hover .face.face2 a{
     box-shadow: 8px 8px 10px black;
 }
+
+
+/* footer section */
+.links{
+    height: 300px;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    align-items: stretch;
+    gap: 5px;
+}
+
+.aboutUs , .contactUs , .shortcut , .followUs{
+    background-color: rgb(108, 107, 107);
+}
+
+.links .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.aboutUs p{
+    font-size: large;
+}
+
+.links  h3{
+    position: relative;
+    font-size: x-large;
+    transition: 0.4s;
+    text-align: center;
+    background: none;
+    z-index: 1;
+    margin-right: 20px;
+    width: fit-content;
+    box-sizing: border-box;
+
+}
+.links  h3::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgb(0, 0, 255);
+    transform: scalex(0);
+    transition: 0.4s;
+    transform-origin: left;
+    transition:transform 1s ease;
+    z-index: -1;
+}
+.links  h3:hover::before {
+    transform-origin: left;
+    transform: scalex(0.5);
+}
+
+.contactUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.contactUs div{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 0.7;
+}
+
+.contactUs img{
+    width: 19px;
+     transform: translateY(5px);
+}
+
+.shortcut{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shortcut ul{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.followUs{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.followUs .socialMedia{
+    position: absolute;
+    align-self: stretch;
+    top : 25%;
+    left : 40%;
+    
+}
+
+
+/* social media section */
+.socialMedia{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    transform-origin: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: url("/images/socialMedia.jpg");
+    background-size: cover;
+}
+
+.socialMedia img{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    top: -4px;
+    right: -3px;
+    z-index: -1;
+}
+.socialMedia a{
+    position: absolute;
+    transition: 1s;
+    opacity: 1;
+    top : 22%;
+    left: 5%;
+    width: 30px;
+    border-radius: 100%;
+}
+
+.socialMedia:hover a:nth-child(1){
+    transform: translate(0px,120%);
+    opacity: 1; 
+}
+.socialMedia:hover a:nth-child(2){
+    transform: translate(140%,-0px);
+    opacity: 1;
+}
+.socialMedia:hover a:nth-child(3){
+    transform: translate(-140%,0px);
+    opacity: 1;
+}
+.socialMedia:hover a:nth-child(4){
+    transform: translate(0,-120%);
+    opacity: 1;
+}
 /* media qurey */
 @media only screen and (max-width:950px) {
     .learningSection{
@@ -254,6 +428,16 @@ a{
     }
     .liveTradeSection p , h3 , a{
         font-size: 2vw;
+    }
+
+    .links{
+        height: min-content;
+        background-color: gray;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        align-items: stretch;
+        gap: 5px;
     }
 }
 
